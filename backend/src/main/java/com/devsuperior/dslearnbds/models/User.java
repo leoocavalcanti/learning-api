@@ -33,7 +33,7 @@ public class User implements Serializable {
 
     private String password;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinTable(name="tb_user_notification",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "notification_id"))
