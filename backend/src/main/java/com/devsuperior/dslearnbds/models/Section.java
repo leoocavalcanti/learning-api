@@ -7,15 +7,14 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.Instant;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "tb_notification")
-public class Notification implements Serializable {
+@Table(name = "tb_section")
+public class Section implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -24,15 +23,16 @@ public class Notification implements Serializable {
     @EqualsAndHashCode.Include
     private Long id;
 
-    private String text;
-
-    private Instant moment;
-
-    private Boolean read = false;
-
-    private String route;
-
+    private String title;
+    private String description;
+    private Integer position;
+    private String imgUri;
     @ManyToOne
-    @JoinColumn(name="user_id")
-    private User user;
+    @JoinColumn(name="resource_id")
+    private Resource resource;
+    @ManyToOne
+    @JoinColumn(name="prerequisite_id")
+    private Section prerequisite;
+
+
 }

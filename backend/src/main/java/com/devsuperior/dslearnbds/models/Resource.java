@@ -1,5 +1,6 @@
 package com.devsuperior.dslearnbds.models;
 
+import com.devsuperior.dslearnbds.models.enums.ResourceType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -7,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,28 +16,27 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "tb_offer")
-public class Offer implements Serializable {
+@Table(name = "tb_resource")
+public class Resource implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Long id;
-
-    private String edition;
-
-    private Instant startMoment;
-
-    private Instant endMoment;
+    private String title;
+    private String description;
+    private Integer position;
+    private String imgUri;
+    private ResourceType type;
     @ManyToOne
-    @JoinColumn(name = "course_id")
-    private Course course;
+    @JoinColumn(name="offer_id")
+    private Offer offer;
 
     @OneToMany(fetch = FetchType.EAGER)
-    @JoinTable(name="tb_offer_resource",
-            joinColumns = @JoinColumn(name = "offer_id"),
-            inverseJoinColumns = @JoinColumn(name = "resource_id"))
-    List<Resource> resources = new ArrayList<>();
+    @JoinTable(name="tb_resource_section",
+            joinColumns = @JoinColumn(name = "resource_id"),
+            inverseJoinColumns = @JoinColumn(name = "section_id"))
+    private List<Section> sections = new ArrayList<>();
 
 }
