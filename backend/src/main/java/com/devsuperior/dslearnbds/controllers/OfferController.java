@@ -1,8 +1,6 @@
 package com.devsuperior.dslearnbds.controllers;
 
-import com.devsuperior.dslearnbds.models.Lesson;
 import com.devsuperior.dslearnbds.models.Offer;
-import com.devsuperior.dslearnbds.services.LessonService;
 import com.devsuperior.dslearnbds.services.OfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

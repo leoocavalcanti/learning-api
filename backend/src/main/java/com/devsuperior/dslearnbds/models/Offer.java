@@ -36,6 +36,9 @@ public class Offer implements Serializable {
     @JoinColumn(name = "course_id")
     private Course course;
 
+    @OneToMany(mappedBy = "offer")
+    private List<Topic> topics = new ArrayList<>();
+
     @OneToMany(fetch = FetchType.EAGER)
     @JoinTable(name="tb_offer_resource",
             joinColumns = @JoinColumn(name = "offer_id"),

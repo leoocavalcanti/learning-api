@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -27,6 +29,10 @@ public abstract class Lesson implements Serializable {
     private Long id;
     private String title;
     private Integer position;
+
+    @OneToMany(mappedBy = "lesson")
+    private List<Deliver> deliveries = new ArrayList<>();
+
     @ManyToOne
     @JoinColumn(name = "section_id")
     private Section section;

@@ -1,8 +1,6 @@
 package com.devsuperior.dslearnbds.services;
 
-import com.devsuperior.dslearnbds.models.Lesson;
 import com.devsuperior.dslearnbds.models.Offer;
-import com.devsuperior.dslearnbds.repositories.LessonRepository;
 import com.devsuperior.dslearnbds.repositories.OfferRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
