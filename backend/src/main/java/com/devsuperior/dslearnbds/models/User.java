@@ -30,6 +30,7 @@ public class User implements UserDetails, Serializable {
 
     private String name;
 
+    @Column(unique = true)
     private String email;
 
     private String password;
@@ -81,5 +82,18 @@ public class User implements UserDetails, Serializable {
     public boolean isEnabled() {
         // TODO Auto-generated method stub
         return true;
+    }
+
+    public boolean hasRole(String roleName){
+
+        for(Role role: roles){
+
+            if(role.getAuthority().equals(roleName)){
+
+                return true;
+            }
+        }
+
+        return false;
     }
 }

@@ -26,13 +26,18 @@ public class Notification implements Serializable {
 
     private String text;
 
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant moment;
 
-    private Boolean read = false;
+    private Boolean read;
 
     private String route;
 
     @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
+
+    public boolean isRead() {
+        return read;
+    }
 }
