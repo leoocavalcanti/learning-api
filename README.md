@@ -9,5 +9,5 @@ Imagens:
 
 ![Turma Home](https://user-images.githubusercontent.com/98703816/233697819-05341db7-76f9-4844-ab74-d4f0ee390875.png)
 
-![Aulas Trilha](https://user-images.githubusercontent.com/98703816/233697809-5ea32873-5e30-4f40-86f4-2f7774c2ec55.png)
+![Aulas Trilha (1)](https://user-images.githubusercontent.com/98703816/233698623-2d7fa685-f847-4e7c-8a52-ed682554e318.png)
 
