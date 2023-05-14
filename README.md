@@ -1,4 +1,4 @@
-## Sistema de um curso para desenvolvedores criado em Java (Spring Boot) e Javascript (React)
+## Sistema de um curso para desenvolvedores criado em Java (Spring Boot) e Javascript (React + NextJs)
 
 O sistema consiste em uma aplicação web fullstack de um curso online, onde existem vários módulos e disciplinas para o aluno estudar. Os professores podem passar atividades,
 notificar alunos, corrigir tarefas, responder alunos no fórum, etc. Os alunos também possuem acesso para comunicarem entre si por meio do fórum. 
